@@ -30,7 +30,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ screts.PASSPRHASE }}
+          passphrase: ${{ secrets.PASSPRHASE }}
           script: |
             cd ~/
             docker pull wdinx/ci-cd-task:latest
