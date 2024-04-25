@@ -49,7 +49,7 @@ func Migrate(db *gorm.DB) {
 func LoadEnv() {
 	err := godotenv.Load()
 	if err != nil {
-		log.Fatal("Error loading .env file")
+		log.Println("Nothing Env File, Environment From Docker Compose Will Be Loaded")
 	}
 }
 
