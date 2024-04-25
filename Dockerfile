@@ -12,7 +12,7 @@ FROM ubuntu AS build-release-stage
 
 WORKDIR /
 
-COPY --from=build-stage /app/.env /.env
+#COPY --from=build-stage /app/.env /.env
 COPY --from=build-stage /goapp /goapp
 
 EXPOSE 1324
