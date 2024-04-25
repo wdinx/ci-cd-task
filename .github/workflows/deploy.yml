@@ -33,7 +33,7 @@ jobs:
           passphrase: ${{ secrets.PASSPRHASE }}
           script: |
             cd ~/
-            docker container stop -f wdinx/ci-cd-task:latest
+            docker container rm -f wdinx/ci-cd-task:latest
             docker pull wdinx/ci-cd-task:latest
             docker
             docker run -d -p 1325:1323 --env DBHOST=${{ secrets.DBHOST }} --env DBPORT=${{ secrets.DBPORT }} --env DBUSER={{ secrets.DBUSER }} --env DBPASS=${{ secrets.DBPASS }} --env DBNAME=${{ secrets.DBNAME }}  wdinx/ci-cd-task:latest
