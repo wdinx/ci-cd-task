@@ -42,6 +42,7 @@ func InitDB(config Config) {
 }
 
 func Migrate(db *gorm.DB) {
+	db.Exec("CREATE DATABASE IF NOT EXISTS learndocker;")
 	db.Exec("CREATE TABLE IF NOT EXISTS posts(id INT PRIMARY KEY AUTO_INCREMENT,title VARCHAR(255) NOT NULL,content VARCHAR(255) NOT NULL);")
 	log.Println("database migration success")
 }

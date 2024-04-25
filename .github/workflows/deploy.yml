@@ -33,10 +33,9 @@ jobs:
           passphrase: ${{ secrets.PASSPRHASE }}
           script: |
             cd ~/
-            docker container stop wdinx/ci-cd-task:latest
+            docker container stop -f wdinx/ci-cd-task:latest
             docker pull wdinx/ci-cd-task:latest
             docker
             docker run -d -p 1325:1323 --env DBHOST=${{ secrets.DBHOST }} --env DBPORT=${{ secrets.DBPORT }} --env DBUSER={{ secrets.DBUSER }} --env DBPASS=${{ secrets.DBPASS }} --env DBNAME=${{ secrets.DBNAME }}  wdinx/ci-cd-task:latest
             docker network connect bridge wdinx/ci-cd-task:latest
-            docker network connect bridge mysql
 #            docker compose down && docker compose up --build -d
